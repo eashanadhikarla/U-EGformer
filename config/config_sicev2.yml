@@ -1,0 +1,45 @@
+data:
+  traindir: '../../datasets/SICEV2/train/low/'
+  testdir: '../../datasets/SICEV2/test/low/' # or null
+  split_percentage: 1 # default: 0.9 (to only use training data use '1')
+  task: 'low' # ['low', 'over', 'mixed']
+  image_size: !tuple (900,600)  # or (900,600)
+  num_test_samples: null # 3 Reducing the test size to fit into the memory
+  scheduler: 'CosineAnnealingLR' # ['StepLR', 'MultiStepLR', 'CosineAnnealingLR', 'WarmupCosine']
+  warmup_epochs: 3
+  milestones: [400, 800]
+
+training:
+  loss_funcs:
+    - 'L1'
+    - 'MSE'
+    - 'Attention'
+    - 'SSIM'
+    # - 'MAL1'
+    # - 'MSSSIM'
+    # - 'GHist'
+  epochs: 6 # 1000 # default: 1000
+  batch_size: 4
+  lr: 0.0001
+  weight_decay: 0.0004
+  gamma: 0.5
+  step_size: 150
+  seed: 3407
+
+model:
+  pretrain_dir: false
+  MapGenerator_transformer_blocks: 8
+  pos_emb_dim: 48
+
+debugging:
+  debug: false
+  save_model: false # [true OR false]
+  ckpt_dir: "checkpoint/sicev2"
+  tb: false
+
+testing:
+  testdir: '../../datasets/SICEV2/test/low/'
+  image_size: !tuple (900,600) # null or (900,600)
+  task: 'low' # ['low' OR 'over' OR 'mixed']
+  load_model: './checkpoint/'
+  num_test_samples: null # Reducing the test size to fit into the memory (None to load entire test data)
