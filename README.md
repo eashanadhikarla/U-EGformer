@@ -1,4 +1,10 @@
 # Unified-EGformer: Exposure Guided Lightweight Transformer for Mixed-Exposure Image Enhancement
+Adhikarla et al
+
+[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://link.springer.com/chapter/10.1007/978-3-031-78110-0_17)
+[![supplement](https://img.shields.io/badge/Supplementary-Material-red)](https://arxiv.org/pdf/2407.13170)
+[![slides](https://img.shields.io/badge/Presentation-Slides-B762C1)](https://github.com/eashanadhikarla/U-EGformer)
+
 Despite recent strides made by AI in image processing, the issue of mixed exposure, pivotal in many real-world scenarios like surveillance and photography, remains a challenge. Traditional image enhancement techniques and current transformer models are limited with primary focus on either overexposure or underexposure. To bridge this gap, we introduce the Unified-Exposure Guided Transformer (Unified-EGformer). Our proposed solution is built upon advanced transformer architectures, equipped with local pixel-level refinement and global refinement blocks for color correction and image-wide adjustments. We employ a guided attention mechanism to precisely identify exposure-compromised regions, ensuring its adaptability across various real-world conditions. U-EGformer, with a lightweight design featuring a memory footprint (peak memory) of only 1134 MB (0.1 Million parameters) and an inference time of **95 ms** (over **9x** faster than typical existing implementations, is a viable choice for real-time applications such as surveillance and autonomous navigation. Additionally, our model is highly generalizable, requiring minimal fine-tuning to handle multiple tasks and datasets with a single architecture.
 
 ## News
